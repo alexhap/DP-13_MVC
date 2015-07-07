@@ -6,7 +6,7 @@
 import javax.swing.*;
 
 public class BeatBar extends JProgressBar implements Runnable {
-
+//    JProgressBar progressBar;
     Thread thread;
 
     public BeatBar() {
@@ -16,12 +16,12 @@ public class BeatBar extends JProgressBar implements Runnable {
     }
 
     public void run() {
-        while (true) {
-            setValue((int) (getValue() * 0.75));
+        while(true) {
+            setValue(getValue() * 3 / 5);
             repaint();
             try {
-                Thread.sleep(200);
-            } catch (InterruptedException e) {}
+                Thread.sleep(50);
+            } catch (Exception e) {}
         }
     }
 }
